@@ -1,1 +1,7 @@
-# IDS
+The Intrusion Detection System (IDS) is a real-time, intelligent desktop application designed to monitor and classify system behavior as either normal or malicious using machine learning techniques. The system focuses on analyzing system calls, which are a low-level representation of software activity, to detect possible intrusions or abnormal patterns.
+
+Built using Python, the backend includes modules for data collection, model training, and prediction, while the GUI is created using Tkinter. The system employs a trained Random Forest classifier, which achieves an impressive 98.5% accuracy, to process sequences of system calls stored in CSV files and determine the nature of the activity.
+
+System monitoring is performed in cycles: every 60 seconds, system calls are recorded into alternating buffers — buffer1.csv and buffer2.csv. While one buffer is collecting data, the other is analyzed by the model. The prediction results are then displayed on the interface as either NORMAL or ATTACK, and the screen updates accordingly. A log box shows a timestamped record of all predictions, providing a running history of system activity.
+
+The system features Start Monitoring and Stop Monitoring buttons to control operation. The architecture is modular, allowing for easy updates to the ML model or UI. The IDS has been developed to work on Ubuntu-based systems, making it suitable for Linux security monitoring environments.
